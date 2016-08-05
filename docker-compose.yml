@@ -8,3 +8,10 @@ postgres:
   environment:
     - PGDATA=/var/lib/postgresql/data/pgdata
     - POSTGRES_PASSWORD=postgres
+rabbitmq:
+  image: rabbitmq:3.6-management
+  restart: always
+  ports:
+    - 5672
+    - 15672
+  hostname: rabbitmq
