@@ -1,6 +1,6 @@
 FROM php:5.6-cli
-RUN apt-get update \
-    && apt install -y libpq-dev \
+RUN apt-get update -qq \
+    && apt install -yqq libpq-dev \
     && docker-php-ext-install -j$(nproc) \
         bcmath \
         pgsql \
