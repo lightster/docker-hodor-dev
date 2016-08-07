@@ -5,6 +5,6 @@ RUN apt-get update -qq \
         bcmath \
         pgsql \
     && pecl install xdebug \
-    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini
+    && docker-php-ext-enable xdebug
 ADD https://getcomposer.org/installer composer-setup.php
 RUN php composer-setup.php --quiet --install-dir=/usr/local/bin --filename=composer
