@@ -1,4 +1,4 @@
-FROM php:5.6-cli
+FROM php:5.6.24-cli
 MAINTAINER Matt Light <matt.light@lightdatasys.com>
 RUN apt-get update -qq \
     && apt install -yqq libpq-dev \
