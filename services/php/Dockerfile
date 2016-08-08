@@ -9,3 +9,6 @@ RUN apt-get update -qq \
     && docker-php-ext-enable xdebug
 ADD https://getcomposer.org/installer composer-setup.php
 RUN php composer-setup.php --quiet --install-dir=/usr/local/bin --filename=composer
+
+VOLUME [ "/hodor" ]
+WORKDIR /hodor
