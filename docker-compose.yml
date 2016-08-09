@@ -15,3 +15,10 @@ rabbitmq:
     - 5672
     - 15672
   hostname: rabbitmq
+php:
+  image: lightster/hodor-dev-php:5.6.24.0
+  volumes:
+    - ./volumes/hodor/:/var/lib/postgresql/data/pgdata
+  links:
+    - postgres
+    - rabbitmq
