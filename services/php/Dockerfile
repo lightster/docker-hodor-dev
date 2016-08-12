@@ -1,10 +1,14 @@
 FROM php:5.6.24-cli
 MAINTAINER Matt Light <matt.light@lightdatasys.com>
 RUN apt-get update -qq \
-    && apt install -yqq libpq-dev \
+    && apt install -yqq \
+        libpq-dev \
+        git \
+        postgresql-client \
     && docker-php-ext-install -j$(nproc) \
         bcmath \
-        pgsql \
+        pdo_pgsql \
+        zip \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug
 ADD https://getcomposer.org/installer composer-setup.php
