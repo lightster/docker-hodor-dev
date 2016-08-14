@@ -16,7 +16,7 @@ rabbitmq:
     - 15672
   hostname: rabbitmq
 php:
-  image: lightster/hodor-dev-php:5.6.24.0
+  image: lightster/hodor-dev-php:5.6.24.1
   volumes:
     - ./volumes/hodor/:/hodor
   links:
