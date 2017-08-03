@@ -19,3 +19,4 @@ VOLUME [ "/hodor" ]
 WORKDIR /hodor
 
 ENTRYPOINT ["make"]
+CMD ["test"]
