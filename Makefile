@@ -1,3 +1,6 @@
+test:
+	docker-compose run --rm php test
+
 up: down
 	docker-compose up -d
 
