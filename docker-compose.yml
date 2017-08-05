@@ -1,23 +1,22 @@
-postgres:
-  image: postgres:9.3
-  restart: always
-  ports:
-    - 5432
-  environment:
-    - PGDATA=/var/lib/postgresql/data
-    - POSTGRES_PASSWORD=
-    - POSTGRES_DB=test_hodor
-rabbitmq:
-  image: rabbitmq:3.6-management
-  restart: always
-  ports:
-    - 5672
-    - 15672
-  hostname: rabbitmq
-php:
-  build: ./services/php
-  volumes:
-    - ./volumes/hodor/:/hodor
-  links:
-    - postgres
-    - rabbitmq
+version: '3.3'
+services:
+  postgres:
+    image: postgres:9.3
+    restart: always
+    ports:
+      - 5432
+    environment:
+      - PGDATA=/var/lib/postgresql/data
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=test_hodor
+  rabbitmq:
+    image: rabbitmq:3.6-management
+    restart: always
+    ports:
+      - 5672
+      - 15672
+    hostname: rabbitmq
+  php:
+    build: ./services/php
+    volumes:
+      - ./volumes/hodor/:/hodor
