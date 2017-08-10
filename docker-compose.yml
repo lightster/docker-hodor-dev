@@ -20,3 +20,4 @@ services:
     build: ./services/php
     volumes:
       - ./volumes/hodor/:/hodor
+      - ~/.composer/:/.composer
